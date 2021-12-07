@@ -1,11 +1,6 @@
-# from day7_data import test_data as data
 from day7_data import data
-# from matplotlib import pyplot as plt
-
 import numpy as np
 import math
-
-limits = 0,2000
 
 data_np = np.array(data)
 med = np.median(data_np)
