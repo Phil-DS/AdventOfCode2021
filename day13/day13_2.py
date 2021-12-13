@@ -19,7 +19,7 @@ for folding in folds:
     res = fold(res, *folding)
 
 # my size is 40/13
-scr = [[' ' for _ in range(50)] for _ in range(50)]
+scr = [[' ' for _ in range(40)] for _ in range(6)]
 for x,y in res:
     scr[y][x] = '█'
 
