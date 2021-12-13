@@ -6,10 +6,10 @@ def fold(data,axis,line):
     rtn = set()
     for x,y in data:
         if axis == 'x':
-            dist = abs(line - x)
+            dist = line - abs(line - x)
             rtn.add((dist,y))
         else:
-            dist = abs(line - y)
+            dist = line - abs(line - y)
             rtn.add((y,dist))
     
     return rtn
