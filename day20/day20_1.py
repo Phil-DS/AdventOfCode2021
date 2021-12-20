@@ -16,7 +16,6 @@ bufferedImg = np.zeros((w+2*buffer,h+2*buffer))
 bufferedImg[buffer:-buffer,buffer:-buffer] = imgArray
 times = 50
 finalImg = bufferedImg
-resp = [['#' if col else '.' for col in row] for row in finalImg.astype(int)]
 
 for i in range(times):
     tmp = convolve(finalImg,convolveMatrix)
