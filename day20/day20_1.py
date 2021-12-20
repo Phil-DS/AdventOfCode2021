@@ -19,7 +19,6 @@ finalImg = bufferedImg
 resp = [['#' if col else '.' for col in row] for row in finalImg.astype(int)]
 
 for i in range(times):
-    print(i)
     tmp = convolve(finalImg,convolveMatrix)
     tw,th = tmp.shape
     for i in range(tw):
