@@ -12,9 +12,8 @@ for j,row in enumerate(data):
             righters.append((i,j))
         else:
             downers.append((i,j))
-
+            
 i = 0
-
 while True:
     moved = False
     newRighters = []
