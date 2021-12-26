@@ -526,7 +526,6 @@ data.forEach(
                 }
             } else {
                 for(let i=d[0][1],j=d[0][0]; i!=d[1][1]+xdir,j!=d[1][0]+ydir; i+=xdir,j+=ydir){
-                    // console.log(i,j,d)
                     m[i][j]+=1
                 }
             }
@@ -534,11 +533,9 @@ data.forEach(
     }
 )
 
-// console.log(m)
 const val = m.reduce(
     (prev,curr) => {
         const s = curr.filter(v => v > 1)
-        // console.log(s.length)
         prev += s.length
         return prev
     }, 0

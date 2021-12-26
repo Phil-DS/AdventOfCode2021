@@ -511,26 +511,21 @@ usedData.forEach(
             let xdir = d[1][1] - d[0][1]
             xdir = Math.abs(xdir)/xdir
             for(let i=d[0][1]; i!=d[1][1]+xdir; i+=xdir){
-                // console.log(d[0][0],i,d)
                 m[i][d[0][0]] += 1
             }
         } else {
             let ydir = d[1][0] - d[0][0]
             ydir = Math.abs(ydir)/ydir
             for(let i=d[0][0]; i!=d[1][0]+ydir; i+=ydir){
-                // console.log(i,d[0][1],d)
-
                 m[d[0][1]][i] += 1
             }
         }
     }
 )
 
-// console.log(m)
 const val = m.reduce(
     (prev,curr) => {
         const s = curr.filter(v => v > 1)
-        // console.log(s.length)
         prev += s.length
         return prev
     }, 0

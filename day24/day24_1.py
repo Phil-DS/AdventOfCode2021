@@ -20,22 +20,6 @@ def sliceItUp():
 
 possibleWs = list(range(1,10))
 
-# def mult26WY(w,yplus):
-#     def func(zprevs):
-#         return [(z*26 + w + yplus) for z in zprevs]
-#     return func
-
-# def limit(w,yplus,xplus):
-#     def func(zprevs):
-#         # split depending on the mod
-#         # vals = {}
-#         vals = defaultdict(lambda: [])
-#         for z in zprevs:
-#             zmod = (z % 26)+xplus
-#             if zmod == w:
-                
-#     return func
-
 def doTask(tasks):
     # If it has a (div,z,26) => its a range limiter 
     zs = [(0,0)] 
@@ -50,7 +34,6 @@ def doTask(tasks):
                     val = z//26
                     if ((z % 26) + int(taskSet[5][2])) != w:
                         # x will be 0 here
-                        # values[int(z/26)].append(wLong * 10 + w)
                         val = val * 26 + w + int(taskSet[15][2])
                     values[val].append(wLong * 10 + w)
             # do a prune here. Heap it, then 
