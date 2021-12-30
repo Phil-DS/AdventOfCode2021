@@ -1,10 +1,5 @@
-import collections
-
-
 from collections import defaultdict
 from day24_data import instructions
-import itertools
-import functools
 
 def sliceItUp():
     sliced = []

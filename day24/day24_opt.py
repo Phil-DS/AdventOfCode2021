@@ -1,10 +1,5 @@
-import collections
-
-
 from collections import defaultdict
 from day24_data import instructions
-import itertools
-import functools
 
 def sliceItUp():
     sliced = []
@@ -23,7 +18,7 @@ possibleWs = list(range(1,10))
 def doTask(tasks):
     # If it has a (div,z,26) => its a range limiter 
     zs = [(0,0)] 
-    maxVal = 26**5
+    maxVal = 1
     for i,taskSet in enumerate(tasks):
         currPass = []
         if taskSet[4] == ('div','z','26'):
@@ -37,14 +32,16 @@ def doTask(tasks):
                         val = val * 26 + w + int(taskSet[15][2])
                     values[val].append(wLong * 10 + w)
             # do a prune here. Heap it, then 
-            currPass = [(min(v),k) for k,v in values.items()]
+            currPass = [(max(v),k) for k,v in values.items()]
+            maxVal /= 26
         else:
             # standard pass
             for w in possibleWs:
                 for wLong,z in zs:
                     currPass.append((wLong * 10 + w, 26*z + w + int(taskSet[15][2])))
+            maxVal *= 26
         zs = [c for c in currPass if c[1]<maxVal]
-        print(i,':',len(zs))
+        # maxVal /= 26
     return zs
 
 slicedInstr = sliceItUp()
@@ -56,5 +53,5 @@ for wLong,z in potential:
         continue
     possible.append(wLong)
 
-print(possible)
-print(min(possible))
+# print(possible)
+print(max(possible))
